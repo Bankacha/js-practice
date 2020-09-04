@@ -102,20 +102,43 @@ for (let student of students) {
 //console.log(biggestStudentRank)
 
 //  7. Finding the female student who has the smallest rank
+// let femaleSmallestRanked = students[0];
+
+// for (let student of students) {
+//     if (student.gender === "female") {
+//         if (!femaleSmallestRanked) {
+//             femaleSmallestRanked = student;
+//         } else {
+//             if (femaleSmallestRanked.rank > student.rank) {
+//                 femaleSmallestRanked = student;
+//             }
+//         }
+//     }
+// }
+
+// for (let student of students) {
+//     if (student.genders === "female") {
+//         if (student.genders !== "male") {
+//             femaleSmallestRanked = student;
+//             if (femaleSmallestRanked.rank > student.rank) {
+//                 femaleSmallestRanked = student;
+//             }
+//         }
+//     }
+// }
+
 let femaleSmallestRanked = students[0];
 
-for (let student of students) {
-    if (students.gender === "female") {
-        if (!femaleSmallestRanked) {
-            femaleSmallestRanked = students;
-        } else {
-            if (femaleSmallestRanked.rank > student.rank) {
-                femaleSmallestRanked = student;
-            }
-        }
+
+for (let student of femaleStudentsArr) {
+    if (femaleSmallestRanked.rank > student.rank) {
+        femaleSmallestRanked = student;
+    }if (femaleSmallestRanked.genders !== "male") {
+        femaleSmallestRanked = student;
     }
-}
-//console.log(femaleSmallestRanked)
+} 
+
+console.log(femaleSmallestRanked)
 
 // 8. Calculation and print average rank of students who has rank over 7
 
@@ -126,15 +149,15 @@ for (let student of students) {
         studentsArrOver7.push(student)
     }
 }
-console.log(studentsArrOver7)
+// console.log(studentsArrOver7)
 
 let overSeven = 0;
 
 for (let student of studentsArrOver7) {
     overSeven = overSeven + student.rank;
 }
-console.log(overSeven)
+// console.log(overSeven)
 
 let averageGradeOver7 = overSeven / studentsArrOver7.length;
 
-console.log(averageGradeOver7)
+// console.log(averageGradeOver7)
