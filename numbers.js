@@ -15,10 +15,11 @@ for (let num of array) {
 
 // 2.  Write code that calculates and print the average value of array
 var item2 = 0;
+
 for (let num of array) {
     item2 = item2 + num;
 }
-avrgValArr = item2 / 2;
+avrgValArr = item2 / array.length;
 
 //console.log(avrgValArr)
 // 3.  * Write code that builds new reverse array (see https://www.w3schools.com/js/js_loop_for.asp)

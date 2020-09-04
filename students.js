@@ -28,6 +28,11 @@ const students = [
         name: 'Student 6',
         genders: 'female',
         rank: 9.87
+    },
+    {
+        name: 'Student 6',
+        genders: 'N/A',
+        rank: 9.87
     }
 ];
 
@@ -44,9 +49,10 @@ var ranks = 0;
 
 for (let student of students) {
     ranks = ranks + student.rank;
-    avrgRank = ranks / students.length;
 }
-//console.log(avrgRank)
+
+const avgRankAll = ranks / students.length;
+// console.log(avgRankAll);
 
 //  2. Calculation and print average rank of female students
 
@@ -54,10 +60,12 @@ var femaleRanks = 0;
 var numOfFemale = 0;
 
 for (let student of students) {
+
     if (student.genders === "female") {
         femaleRanks = femaleRanks + student.rank;
         numOfFemale += 1;
     }
+
 }
 //console.log(femaleRanks/numOfFemale)
 
@@ -71,7 +79,7 @@ const avrgFemaleRank = femaleRanks / numOfFemale;
 sumOfFemaleRanks = 0;
 
 for (let student of students) {
-    if (student.genders === "female") {
+    if (student.genders === "male") {
         sumOfFemaleRanks = sumOfFemaleRanks + student.rank;
     }
 }
@@ -84,7 +92,9 @@ let femaleStudentsArr = [];
 for (let student of students) {
     if (student.genders === "male") {
         maleStudentsArr.push(student);
-    } else {
+    }
+
+    if (student.genders === 'female') {
         femaleStudentsArr.push(student);
     }
 }
@@ -127,11 +137,10 @@ for (let student of students) {
 //     }
 // }
 
-let femaleSmallestRanked = students[0];
-
+let femaleSmallestRanked = femaleStudentsArr[0];
 
 for (let student of femaleStudentsArr) {
-    if (femaleSmallestRanked.rank > student.rank) {
+    if (femaleSmallestRanked.rank < student.rank) {
         femaleSmallestRanked = student;
     }if (femaleSmallestRanked.genders !== "male") {
         femaleSmallestRanked = student;
