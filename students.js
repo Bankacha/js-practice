@@ -169,4 +169,4 @@ for (let student of studentsArrOver7) {
 
 let averageGradeOver7 = overSeven / studentsArrOver7.length;
 
-// console.log(averageGradeOver7)
+//  console.log(averageGradeOver7)

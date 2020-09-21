@@ -1,4 +1,4 @@
-const { getStudentsByGender, getAverageRankByGender, getSumOfStudentsRanksByGender } = require('./studentFunctions');
+const { getStudentsByGender, getAverageRankByGender, getSumOfStudentsRanksByGender, getBothArrays, getBiggestRank, getSmallestRank, getMaleStudents, getSmallestFemaleRank, getSmallestFemaleRankWithOtherFunc } = require('./studentFunctions');
 
 const students = [
     {
@@ -56,11 +56,11 @@ const averageRankByMale = getAverageRankByGender(students, "male");
 const averageRankByFemale = getAverageRankByGender(students, "female")
 const averageRankByAll = getAverageRankByGender(students, "ALL")
 
-console.log({
-    averageRankByMale,
-    averageRankByFemale,
-    averageRankByAll
-})
+// console.log({
+//     averageRankByMale,
+//     averageRankByFemale,
+//     averageRankByAll
+// })
 
 //  4. Calculation and print of sum of male students ranks
 
@@ -68,19 +68,31 @@ const sumStudentsRankMale = getSumOfStudentsRanksByGender(students, "male")
 const sumStudentsRankFemale = getSumOfStudentsRanksByGender(students, "female")
 const sumStudentsRankAll = getSumOfStudentsRanksByGender(students, "ALL")
 
-console.log({
-    sumStudentsRankMale,
-    sumStudentsRankFemale,
-    sumStudentsRankAll
-})
+// console.log({
+//     sumStudentsRankMale,
+//     sumStudentsRankFemale,
+//     sumStudentsRankAll
+// })
 
 //  5. Building two new arrays, one with male students, another with female
-
+const bothArrays = getBothArrays(students);
+// console.log(bothArrays);
 
 //  6. Finding the student who has the biggest rank
+ const biggestRank = getBiggestRank(students);
+ //console.log(biggestRank)
 
+ const smallestRank = getSmallestRank(students);
+ console.log(smallestRank)
 
 //  7. Finding the female student who has the smallest rank
+const smallestFemale = getSmallestFemaleRank(students);
+//console.log(smallestFemale)
 
+const smallestFemaleWithFunc = getSmallestFemaleRankWithOtherFunc(students);
+console.log(smallestFemaleWithFunc)
 
 // 8. Calculation and print average rank of students who has rank over 7
+
+// const maleStudents2 = getMaleStudents(students);
+// console.log(maleStudents2)
